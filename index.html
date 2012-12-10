@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+
+<title>Title of the document</title>
+<style>
+.night {
+    background-color:black;
+    color:white;
+}
+
+.day {
+    background-color:#f4f4f4;
+}
+#container {
+    position:absolute;
+    margin: 0px auto;
+    padding:40px;
+    height:100%;
+    width:auto;
+    font-size:13pt;
+    font-family:sans-serif;
+    line-height:1.5;
+    text-align:left;
+    font-weight:100;
+}
+.fin {
+    color:orange;
+    text-align:left;
+    font-weight:500;
+}
+​
+</style>
+</head>
+
+<body>
+<div id = "container">
+Time aware javascript page to demonstrate the changing of stuff based on expected external light. In lieu of proper light awareness, which would be pretty cool.
+    <script>
+        var d = new Date();
+        var x = document.getElementById("container");
+        var t = d.getHours();
+        x.innerHTML += t;
+    if(t>17 || 6>t) {
+                x.className += "night";
+
+    } else if (t>6 && t<17) {
+    x.className += "day";
+    } else {
+    document.body.bgColor="red";
+    }
+    </script>
+    hours have elapsed since midnight. <br/><span class = "fin">If the page is dark, it's dark outside. If it's light, the sun should be out.</span>
+    
+    </div>
+</body>
+</html>
